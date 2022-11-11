@@ -8,7 +8,7 @@ fi
 
 # Open result links in a new tab by default
 if [ ! -z "${NEW_TAB}" ]; then
-    sed -i -e "s+# results_on_new_tab: false+results_on_new_tab: true/g" \
+    sed -i -e "s/# results_on_new_tab:/results_on_new_tab:/s/false/true/g" \
     searx/settings.yml;
 fi
 
