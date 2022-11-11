@@ -1,6 +1,6 @@
 # use prebuild alpine image with needed python packages from base branch
 FROM yeavv/xng:base
-ENV IMAGE_PROXY= REDIS_URL= LIMITER= BASE_URL= NAME= PRIVACYPOLICY= CONTACT= PROXY= SAFE_SEARCH= NEW_TAB= \
+ENV IMAGE_PROXY= REDIS_URL= LIMITER= BASE_URL= NAME= PRIVACYPOLICY= CONTACT= PROXY= SAFE_SEARCH=2 NEW_TAB=true \
 GID=991 UID=991 \
 ISSUE_URL=https://github.com/yeavv/xng/issues \
 GIT_URL=https://github.com/yeavv/xng \
