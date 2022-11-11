@@ -24,7 +24,7 @@ COPY ./src/run.sh /usr/local/bin/run.sh
 # make run.sh executable, remove css maps (since the builder does not support css maps for now), copy uwsgi server ini, set default settings, precompile static theme files
 RUN cp -r -v dockerfiles/uwsgi.ini /etc/uwsgi/; \
 chmod +x /usr/local/bin/run.sh; \
-sed -i -e "/autocomplete:/s/\"\"/\"google\"/g" \
+sed -i -e "/safe_search:/s/0/2/g" \
 -e "/autocomplete_min:/s/4/0/g" \
 -e "/port:/s/8888/8080/g" \
 -e "/bind_address:/s/127.0.0.1/0.0.0.0/g" \
@@ -34,6 +34,7 @@ sed -i -e "/autocomplete:/s/\"\"/\"google\"/g" \
 -e "/X-Robots-Tag: noindex, nofollow/d" \
 -e "/Referrer-Policy: no-referrer/d" \
 -e "/static_use_hash:/s/false/true/g" \
+-e "s/# results_on_new_tab: false/results_on_new_tab: true/g" \
 -e "s/    use_mobile_ui: false/    use_mobile_ui: true/g" \
 -e "/name: btdigg/s/$/\n    disabled: true/g" \
 -e "/name: deviantart/s/$/\n    disabled: true/g" \
