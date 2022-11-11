@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  searxng:
+  xng:
     image: yeavv/xng:production
     restart: always
     ports:
